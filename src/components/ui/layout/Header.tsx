@@ -9,51 +9,44 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 
-// 1. Definição dos links de navegação
 const navLinks = [
   { href: '#inicio', label: 'Início' },
   { href: '#imoveis', label: 'Imóveis' },
   { href: '#sobre', label: 'Sobre' },
+  { href: '#depoimentos', label: 'Depoimentos' },
   { href: '#contato', label: 'Contato' },
-]
+];
 
 export function Header() {
   return (
-    // 2. Container do Header
-    <header className="sticky top-0 z-40 w-full border-b border-border/40 bg-background/95 backdrop-blur shadow-sm">
-      <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:px-6">
-        
-        {/* 3. Logo */}
-        <a href="/" className="flex items-center gap-2">
-          {/* Usando o nome da marca com as cores e uma fonte sofisticada */}
-          <span className="text-2xl font-bold tracking-tight text-primary">
-            ZEFERINO
-          </span>
-          <span className="text-lg font-medium text-secondary">
-            IMÓVEIS
+    <header className="sticky top-0 z-50 w-full bg-white border-b shadow-sm">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+        {/* Logo + nome */}
+        <a href="#inicio" className="flex items-center gap-2">
+          <img
+            src="/logoheader.png"
+            alt="Logo Zeferino Imóveis"
+            className="h-8 w-auto"
+          />
+          <span className="text-2xl font-bold text-[#6b0504] tracking-tight font-serif">
+            Zeferino
           </span>
         </a>
-
-        {/* 4. Navegação Desktop (escondida em telas pequenas) */}
-        <nav className="hidden md:flex md:items-center md:gap-6">
+        <nav className="hidden md:flex md:items-center md:gap-8">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-sm font-medium text-foreground/70 transition-colors hover:text-primary"
+              className="text-base text-zinc-700 font-medium hover:text-[var(--color-brand-light)] transition-colors"
             >
               {link.label}
             </a>
           ))}
-          <Button
-            asChild
-            className="bg-primary text-primary-foreground hover:bg-primary/90"
-          >
+          <Button className="ml-4 bg-[var(--color-brand-primary)] text-white font-semibold px-6 py-2 rounded shadow hover:bg-[#99423d] transition-all">
             <a href="#contato">Fale Conosco</a>
           </Button>
         </nav>
-
-        {/* 5. Navegação Mobile (Sheet - visível apenas em telas pequenas) */}
+        {/* Mobile nav */}
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
@@ -64,8 +57,8 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="right">
               <SheetHeader>
-                <SheetTitle className="text-left text-primary">ZEFERINO</SheetTitle>
-                <SheetDescription className="text-left text-secondary">
+                <SheetTitle className="text-left text-[#6b0504] font-serif">Zeferino</SheetTitle>
+                <SheetDescription className="text-left text-zinc-700">
                   IMÓVEIS
                 </SheetDescription>
               </SheetHeader>
@@ -74,12 +67,12 @@ export function Header() {
                   <a
                     key={link.label}
                     href={link.href}
-                    className="text-lg font-medium text-foreground hover:text-primary"
+                    className="text-lg font-medium text-zinc-700 hover:text-[#6b0504]"
                   >
                     {link.label}
                   </a>
                 ))}
-                <Button asChild size="lg" className="mt-4">
+                <Button asChild size="lg" className="mt-4 bg-[#6b0504] text-white">
                   <a href="#contato">Fale Conosco</a>
                 </Button>
               </nav>
@@ -88,5 +81,5 @@ export function Header() {
         </div>
       </div>
     </header>
-  )
+  );
 }
