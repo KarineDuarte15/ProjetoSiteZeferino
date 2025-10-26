@@ -1,34 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// src/App.tsx
+import { Header } from './components/layout/Header'
+import { WhatsAppButton } from './components/layout/WhatsAppButton'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <main className="min-h-screen bg-background font-sans text-foreground">
+      {/* 1. Adicionamos o Header no topo */}
+      <Header />
+
+      {/* 2. Conteúdo de teste (vamos substituir isso em breve) */}
+      <div className="p-8">
+        <h1 className="text-2xl font-bold text-primary">
+          Olá, Zeferino Imóveis!
+        </h1>
+        <h2 className="text-lg text-secondary">
+          (Teste das Cores da Marca)
+        </h2>
+        
+        {/* Adicionando conteúdo extra para testar o scroll e o header 'sticky' */}
+        <div className="h-[200vh] pt-10">
+          <p>Role para baixo para ver o efeito "sticky" do header.</p>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+      {/* 3. Botão flutuante */}
+      <WhatsAppButton /> 
+    </main>
   )
 }
 

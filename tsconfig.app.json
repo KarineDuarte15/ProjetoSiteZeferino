@@ -14,7 +14,9 @@
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
     "noEmit": true,
-    "jsx": "react-jsx",
+/* --- ESTAS SÃO AS MUDANÇAS CRÍTICAS --- */
+    "jsx": "react-jsxdev",           // MUDANÇA 2: Manter "react-jsxdev"
+    /* ------------------------------------ */
 
     /* Linting */
     "strict": true,

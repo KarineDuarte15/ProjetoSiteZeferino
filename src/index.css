@@ -2,7 +2,7 @@
 
 @plugin "tailwindcss-animate";
 @import "tailwindcss";
-@import "tw-animate-css";
+/*@import "tw-animate-css";*/
 
 @custom-variant dark (&:is(.dark *));
 @theme {
@@ -51,63 +51,74 @@
 }
 
 :root {
+  /* Cores da Marca (Você já tem isso, ótimo!) */
   --color-brand-primary: #6b0504;
   --color-brand-secondary: #c8a97e;
   --color-brand-light: #fdfaf6;
   --color-brand-dark: #2b2b2b;
+
+  /* Tema "Luxo Clássico" (O Ajuste) */
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  
+  /* Mapeando as cores da marca para o tema */
+  --background: var(--color-brand-light);  /* Fundo Bege Claro */
+  --foreground: var(--color-brand-dark);  /* Texto Preto Suave */
+
+  --card: oklch(1 0 0); /* Cards brancos para destaque */
+  --card-foreground: var(--color-brand-dark);
+  
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
+  --popover-foreground: var(--color-brand-dark);
+
+  --primary: var(--color-brand-primary);        /* Cor Vinho */
+  --primary-foreground: var(--color-brand-light); /* Texto sobre o Vinho */
+
+  --secondary: var(--color-brand-secondary);     /* Cor Dourado/Bege */
+  --secondary-foreground: var(--color-brand-primary); /* Texto sobre o Dourado */
+
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
+
   --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --accent-foreground: var(--color-brand-primary);
+
+  --destructive: oklch(0.577 0.245 27.325); /* Cor de erro (pode manter) */
+  
+  --border: var(--color-brand-secondary) / 0.5; /* Bordas com tom Dourado */
+  --input: var(--border);
+  --ring: var(--color-brand-primary); /* Anel de foco (ex: em inputs) */
+  
+
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
+  /* Tema Escuro (Versão Invertida) */
+  --background: var(--color-brand-dark);  /* Fundo Preto Suave */
+  --foreground: var(--color-brand-light);  /* Texto Bege Claro */
+
   --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
+  --card-foreground: var(--color-brand-light);
+
   --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
+  --popover-foreground: var(--color-brand-light);
+
+  --primary: var(--color-brand-primary);
+  --primary-foreground: var(--color-brand-light);
+
+  --secondary: var(--color-brand-secondary);
+  --secondary-foreground: var(--color-brand-primary);
+  
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
+
   --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --accent-foreground: var(--color-brand-light);
+  
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+
+  --border: var(--color-brand-secondary) / 0.3;
+  --input: var(--border);
+  --ring: var(--color-brand-secondary);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
