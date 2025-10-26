@@ -1,6 +1,6 @@
 // src/App.tsx
-import { Header } from './components/layout/Header'
-import { WhatsAppButton } from './components/layout/WhatsAppButton'
+import { Header } from './components/ui/layout/Header'
+import { WhatsAppButton } from './components/ui/layout/WhatsAppButton'
 
 function App() {
   return (

@@ -1,5 +1,5 @@
 import { Menu } from 'lucide-react'
-import { Button } from '@/components/button'
+import { Button } from '@/components/ui/button';
 import {
   Sheet,
   SheetContent,
@@ -7,7 +7,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from '@/components/sheet'
+} from '@/components/ui/sheet';
 
 // 1. Definição dos links de navegação
 const navLinks = [

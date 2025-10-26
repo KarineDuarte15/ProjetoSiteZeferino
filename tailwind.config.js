@@ -1,18 +1,11 @@
-// tailwind.config.js
-
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {
-      // Correto, sem as cores aqui
-    },
+    extend: {},
   },
-  plugins: [
-    // GARANTA QUE ESTE ARRAY ESTÁ VAZIO
-    // A linha "require("tailwindcss-animate")" NÃO deve estar aqui
-  ],
+  plugins: [],
 }
