@@ -1,6 +1,7 @@
 // src/components/sections/Hero.tsx
 
 import { useState } from 'react'
+import { TypeAnimation } from 'react-type-animation'
 import { Search } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
@@ -10,7 +11,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { TypeAnimation } from 'react-type-animation'
+import heroCentralPng from '../../assets/hero-central.png';
+import heroBackgroundGif from '../../assets/hero-background.gif';
 
 type FilterType = 'Comprar' | 'Repasse' | 'Lancamento'
 
@@ -19,18 +21,33 @@ export function Hero() {
 
   return (
     // 1. Container da Seção com Imagem de Fundo
-    <section className="relative flex h-[70vh] min-h-[600px] w-full items-center justify-center py-16 md:py-24">
-      
-      {/* 2. Imagem de Fundo e Overlay Escuro */}
-      {/* (Substitua '/hero-background.jpg' pela sua imagem na pasta /public) */}
+    <section className="relative flex h-[80vh] min-h-[600px] w-full items-center justify-center overflow-hidden py-16 md:py-24">
+
+      {/* 3. Fundo (agora um GIF) */}
       <div className="absolute inset-0 z-[-1]">
         <img
-          src="/hero-background.gif" 
-          alt="Imagem de fundo de imóveis de luxo"
+          src={heroBackgroundGif} // <-- USANDO O GIF
+          alt="Zeferino Imóveis background"
           className="h-full w-full object-cover"
         />
-        {/* Overlay escuro para contraste (como no protótipo) */}
+        {/* Overlay escuro para contraste */}
         <div className="absolute inset-0 bg-black/60" />
+      </div>
+
+      {/* 4. Conteúdo Centralizado (Slogan + Logo) */}
+      <div className="container mx-auto max-w-7xl px-4 text-center md:px-6">
+
+        {/* 5. Novo Slogan (do exemplo) */}
+        <h1 className="text-4xl font-bold tracking-tight text-brand-light md:text-5xl">
+          A exclusividade que você procura no Eusébio.
+        </h1>
+
+        {/* 6. Logo Central (hero-central.png) */}
+        <img
+          src={heroCentralPng}
+          alt="Zeferino Imóveis - Logo Completo"
+          className="mx-auto mt-12 h-24 w-auto drop-shadow-lg md:h-32"
+        />
       </div>
 
       {/* 3. Conteúdo Centralizado (Título + Caixa de Filtros) */}

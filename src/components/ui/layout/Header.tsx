@@ -8,6 +8,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
+import logoHeaderPng from '../../../assets/logoheader.png';
 
 const navLinks = [
   { href: '#inicio', label: 'Início' },
@@ -24,9 +25,9 @@ export function Header() {
         {/* Logo + nome */}
         <a href="#inicio" className="flex items-center gap-2">
           <img
-            src="/logoheader.png"
-            alt="Logo Zeferino Imóveis"
-            className="h-8 w-auto"
+            src={logoHeaderPng} // <-- MUDANÇA
+            alt="Chave Zeferino"
+            className="h-1 w-auto"
           />
           <span className="text-2xl font-bold text-[#6b0504] tracking-tight font-serif">
             Zeferino
